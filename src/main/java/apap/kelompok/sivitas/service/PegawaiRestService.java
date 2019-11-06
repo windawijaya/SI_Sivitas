@@ -9,4 +9,5 @@ public interface PegawaiRestService {
     PegawaiModel createPegawai(PegawaiModel pegawai);
     PegawaiModel getPegawaiByUUID(String uuid);
     List<PegawaiModel> getAllPegawai();
+    PegawaiModel changePegawai(String uuid, PegawaiModel pegawaiUpdate);
 }

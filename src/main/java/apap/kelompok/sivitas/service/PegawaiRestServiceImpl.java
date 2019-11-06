@@ -36,4 +36,17 @@ public class PegawaiRestServiceImpl implements PegawaiRestService {
     public List<PegawaiModel> getAllPegawai() {
         return pegawaiDb.findAll();
     }
+
+    @Override
+    public PegawaiModel changePegawai(String uuid, PegawaiModel pegawaiUpdate) {
+        PegawaiModel pegawai = getPegawaiByUUID(uuid);
+        pegawai.setNip(pegawaiUpdate.getNip());
+        pegawai.setNama(pegawaiUpdate.getNama());
+        pegawai.setTempatLahir(pegawaiUpdate.getTempatLahir());
+        pegawai.setTanggalLahir(pegawaiUpdate.getTanggalLahir());
+        pegawai.setAlamat(pegawaiUpdate.getAlamat());
+        pegawai.setTelepon(pegawaiUpdate.getTelepon());
+
+        return pegawaiDb.save(pegawai);
+    }
 }
