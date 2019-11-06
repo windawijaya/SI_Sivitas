@@ -55,7 +55,7 @@ public class PegawaiRestController {
         return response;
     }
 
-    @GetMapping(value = "pegawai/{uuid_user}")
+    @GetMapping(value = "/pegawai/{uuid_user}")
     private BaseResponse<PegawaiModel> getPegawai(@PathVariable("uuid_user") String uuid){
         BaseResponse<PegawaiModel> response = new BaseResponse<PegawaiModel>();
 
@@ -63,6 +63,7 @@ public class PegawaiRestController {
             response.setStatus(200);
             response.setMessage("success");
             response.setResult(pegawaiRestService.getPegawaiByUUID(uuid));
+
             return response;
         }
         catch (NoSuchElementException e){
@@ -70,5 +71,15 @@ public class PegawaiRestController {
                     HttpStatus.NOT_FOUND, "Pegawai with uuid "+ uuid + " not found"
             );
         }
+    }
+
+    @GetMapping(value = "/pegawai")
+    private BaseResponse<List<PegawaiModel>> getAllPegawai(){
+        BaseResponse<List<PegawaiModel>> response = new BaseResponse<List<PegawaiModel>>();
+        response.setStatus(200);
+        response.setMessage("success");
+        response.setResult(pegawaiRestService.getAllPegawai());
+
+        return response;
     }
 }
