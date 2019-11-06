@@ -13,6 +13,7 @@ yarn-error.log*
 /.changelog
 .npm/
 *#
+application.properties
 
 HELP.md
 target/
