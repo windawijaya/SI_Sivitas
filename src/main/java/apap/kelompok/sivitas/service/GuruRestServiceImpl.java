@@ -36,4 +36,17 @@ public class GuruRestServiceImpl implements GuruRestService {
     public List<GuruModel> getAllGuru() {
         return guruDb.findAll();
     }
+
+    @Override
+    public GuruModel changeGuru(String uuid, GuruModel guruUpdate) {
+        GuruModel guru = getGuruByUUID(uuid);
+        guru.setNig(guruUpdate.getNig());
+        guru.setNama(guruUpdate.getNama());
+        guru.setTempatLahir(guruUpdate.getTempatLahir());
+        guru.setTanggalLahir(guruUpdate.getTanggalLahir());
+        guru.setAlamat(guruUpdate.getAlamat());
+        guru.setTelepon(guruUpdate.getTelepon());
+
+        return guruDb.save(guru);
+    }
 }

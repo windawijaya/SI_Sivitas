@@ -8,4 +8,5 @@ public interface GuruRestService {
     GuruModel createGuru(GuruModel guru);
     GuruModel getGuruByUUID(String uuid);
     List<GuruModel> getAllGuru();
+    GuruModel changeGuru(String uuid, GuruModel guruUpdate);
 }

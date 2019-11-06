@@ -88,4 +88,32 @@ public class GuruRestController {
 
         return response;
     }
+
+    @PutMapping(value = "/guru/{uuid_user}")
+    private BaseResponse<GuruModel>  updateGuru(
+            @PathVariable (value="uuid_user") String uuid,
+            @RequestBody GuruModel guru
+    ){
+        BaseResponse<GuruModel> response = new BaseResponse<GuruModel>();
+        try {
+            if(isNIGMatchData(guru)) {
+                guruRestService.changeGuru(uuid, guru);
+
+                response.setStatus(200);
+                response.setMessage("success");
+                response.setResult(guru);
+
+                return response;
+            }
+            else {
+                throw new ResponseStatusException(
+                        HttpStatus.BAD_REQUEST, "NIG in request body is invalid");
+            }
+        }
+        catch (NoSuchElementException e){
+            throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND, "Guru with uuid "+ uuid + " not found"
+            );
+        }
+    }
 }
