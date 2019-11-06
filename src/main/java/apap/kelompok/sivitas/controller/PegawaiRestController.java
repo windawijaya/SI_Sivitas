@@ -38,6 +38,7 @@ public class PegawaiRestController {
         }
         else return true;
     }
+
     @PostMapping(value= "/pegawai")
     private BaseResponse<PegawaiModel> addPegawai(@Valid @RequestBody PegawaiModel pegawai, BindingResult bindingResult){
         BaseResponse<PegawaiModel> response = new BaseResponse<PegawaiModel>();
