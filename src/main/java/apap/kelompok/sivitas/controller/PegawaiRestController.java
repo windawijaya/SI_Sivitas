@@ -42,7 +42,7 @@ public class PegawaiRestController {
 
             if(!nip.substring(0,1).equals("P") ||
                 !nip.substring(1,9).equals(tanggal)||
-                !nip.substring(14).equals(pegawai.getUuid_user())) {
+                !nip.substring(14).equals(pegawai.getUuidUser())) {
                 throw new ResponseStatusException(
                         HttpStatus.BAD_REQUEST, "NIP in request body is invalid");
             }

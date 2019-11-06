@@ -11,12 +11,12 @@ import javax.validation.constraints.Size;
 
 
 @Entity
-@Table(name = "guru")
+@Table(name = "siswa")
 public class SiswaModel implements Serializable {
     @Id
-    @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "system-uuid", strategy = "uuid")
-    private String uuid_user;
+    @Column(name="uuid_user", nullable = false)
+    private String uuidUser;
 
     @NotNull
     @Size(max = 200)
@@ -42,19 +42,19 @@ public class SiswaModel implements Serializable {
     @Column(name = "telepon", nullable = false)
     private String telepon;
 
-    public String getUuid_user() {
-        return uuid_user;
+    public String getUuidUser() {
+        return uuidUser;
     }
 
-    public void setUuid_user(String uuid_user) {
-        this.uuid_user = uuid_user;
+    public void setUuidUser(String uuidUser) {
+        this.uuidUser = uuidUser;
     }
 
     public String getNis() {
         return nis;
     }
 
-    public void setNig(String nis) {
+    public void setNis(String nis) {
         this.nis = nis;
     }
 
