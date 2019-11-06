@@ -11,7 +11,7 @@ import javax.validation.constraints.Size;
 
 
 @Entity
-@Table(name = "siswa")
+@Table(name = "guru")
 public class SiswaModel implements Serializable {
     @Id
     @GeneratedValue(generator = "system-uuid")
@@ -54,7 +54,7 @@ public class SiswaModel implements Serializable {
         return nis;
     }
 
-    public void setNis(String nis) {
+    public void setNig(String nis) {
         this.nis = nis;
     }
 
