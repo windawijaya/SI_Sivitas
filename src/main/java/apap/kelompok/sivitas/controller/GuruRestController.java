@@ -13,6 +13,7 @@ import javax.validation.Valid;
 import java.sql.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 @RestController
@@ -76,5 +77,15 @@ public class GuruRestController {
                     HttpStatus.NOT_FOUND, "Guru with uuid "+ uuid + " not found"
             );
         }
+    }
+
+    @GetMapping(value = "/guru")
+    private BaseResponse<List<GuruModel>> getAllGuru(){
+        BaseResponse<List<GuruModel>> response = new BaseResponse<List<GuruModel>>();
+        response.setStatus(200);
+        response.setMessage("success");
+        response.setResult(guruRestService.getAllGuru());
+
+        return response;
     }
 }
