@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -16,5 +18,16 @@ public class GuruRestServiceImpl implements GuruRestService {
     @Override
     public GuruModel createGuru(GuruModel guru) {
         return guruDb.save(guru);
+    }
+
+    @Override
+    public GuruModel getGuruByUUID(String uuid) {
+        Optional<GuruModel> guru = guruDb.findById(uuid);
+        if(guru.isPresent()){
+            return guru.get();
+        }
+        else{
+            throw new NoSuchElementException();
+        }
     }
 }

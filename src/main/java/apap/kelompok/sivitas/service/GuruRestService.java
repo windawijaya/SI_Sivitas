@@ -4,5 +4,5 @@ import apap.kelompok.sivitas.model.GuruModel;
 
 public interface GuruRestService {
     GuruModel createGuru(GuruModel guru);
-
+    GuruModel getGuruByUUID(String uuid);
 }

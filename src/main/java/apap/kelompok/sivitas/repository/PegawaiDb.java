@@ -8,6 +8,4 @@ import java.util.Optional;
 
 @Repository
 public interface PegawaiDb  extends JpaRepository<PegawaiModel, String> {
-    @Override
-    Optional<PegawaiModel> findById(String s);
 }
