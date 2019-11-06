@@ -25,6 +25,11 @@ public class SiswaModel implements Serializable {
 
     @NotNull
     @Size(max = 200)
+    @Column(name = "nama", nullable = false)
+    private String nama;
+
+    @NotNull
+    @Size(max = 200)
     @Column(name = "tempat_lahir", nullable = false)
     private String tempatLahir;
 
@@ -88,5 +93,13 @@ public class SiswaModel implements Serializable {
 
     public void setTelepon(String telepon) {
         this.telepon = telepon;
+    }
+
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
     }
 }
