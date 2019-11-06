@@ -7,10 +7,7 @@ import apap.kelompok.sivitas.service.PegawaiRestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
@@ -18,6 +15,8 @@ import java.sql.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.List;
+import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping("/api")
@@ -26,7 +25,7 @@ public class PegawaiRestController {
     private PegawaiRestService pegawaiRestService;
 
     @PostMapping(value= "/pegawai")
-    public BaseResponse<PegawaiModel> addPegawai(@Valid @RequestBody PegawaiModel pegawai, BindingResult bindingResult){
+    private BaseResponse<PegawaiModel> addPegawai(@Valid @RequestBody PegawaiModel pegawai, BindingResult bindingResult){
         BaseResponse<PegawaiModel> response = new BaseResponse<PegawaiModel>();
 
         if(bindingResult.hasFieldErrors()) {
@@ -54,5 +53,22 @@ public class PegawaiRestController {
             }
         }
         return response;
+    }
+
+    @GetMapping(value = "pegawai/{uuid_user}")
+    private BaseResponse<PegawaiModel> getPegawai(@PathVariable("uuid_user") String uuid){
+        BaseResponse<PegawaiModel> response = new BaseResponse<PegawaiModel>();
+
+        try{
+            response.setStatus(200);
+            response.setMessage("success");
+            response.setResult(pegawaiRestService.getPegawaiByUUID(uuid));
+            return response;
+        }
+        catch (NoSuchElementException e){
+            throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND, "Pegawai with uuid "+ uuid + " not found"
+            );
+        }
     }
 }
