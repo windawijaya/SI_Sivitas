@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/teachers")
 public class GuruRestController {
     @Autowired
     private GuruRestService guruRestService;
@@ -37,10 +37,10 @@ public class GuruRestController {
         else return true;
     }
 
-    @PostMapping(value= "/guru")
+    @PostMapping(value= "")
     private BaseResponse<GuruModel> addGuru(@Valid @RequestBody GuruModel guru, BindingResult bindingResult){
         BaseResponse<GuruModel> response;
-        response = new BaseResponse<GuruModel>();
+        response = new BaseResponse<>();
 
         if (!bindingResult.hasFieldErrors()) {
             if(isNIGMatchData(guru)) {
@@ -61,9 +61,9 @@ public class GuruRestController {
         return response;
     }
 
-    @GetMapping(value = "/guru/{uuid_user}")
+    @GetMapping(value = "/{uuid_user}")
     private BaseResponse<GuruModel> getGuru(@PathVariable("uuid_user") String uuid){
-        BaseResponse<GuruModel> response = new BaseResponse<GuruModel>();
+        BaseResponse<GuruModel> response = new BaseResponse<>();
 
         try{
             response.setStatus(200);
@@ -79,9 +79,9 @@ public class GuruRestController {
         }
     }
 
-    @GetMapping(value = "/guru")
+    @GetMapping(value = "")
     private BaseResponse<List<GuruModel>> getAllGuru(){
-        BaseResponse<List<GuruModel>> response = new BaseResponse<List<GuruModel>>();
+        BaseResponse<List<GuruModel>> response = new BaseResponse<>();
         response.setStatus(200);
         response.setMessage("success");
         response.setResult(guruRestService.getAllGuru());
@@ -89,12 +89,12 @@ public class GuruRestController {
         return response;
     }
 
-    @PutMapping(value = "/guru/{uuid_user}")
+    @PutMapping(value = "/{uuid_user}")
     private BaseResponse<GuruModel>  updateGuru(
             @PathVariable (value="uuid_user") String uuid,
             @RequestBody GuruModel guru
     ){
-        BaseResponse<GuruModel> response = new BaseResponse<GuruModel>();
+        BaseResponse<GuruModel> response = new BaseResponse<>();
         try {
             if(isNIGMatchData(guru)) {
                 guruRestService.changeGuru(uuid, guru);
