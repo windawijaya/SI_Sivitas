@@ -1,7 +1,5 @@
 package apap.kelompok.sivitas.model;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import java.io.Serializable;
 import java.sql.Date;
 
@@ -14,9 +12,10 @@ import javax.validation.constraints.Size;
 @Table(name = "siswa")
 public class SiswaModel implements Serializable {
     @Id
-    @GenericGenerator(name = "system-uuid", strategy = "uuid")
-    @Column(name="uuid_user", nullable = false)
-    private String uuidUser;
+    @NotNull
+    @Size(max = 32, min = 32)
+    @Column(name="uuid_user", nullable = false, unique = true)
+    private String idUser;
 
     @NotNull
     @Size(max = 200)
@@ -47,12 +46,12 @@ public class SiswaModel implements Serializable {
     @Column(name = "telepon", nullable = false)
     private String telepon;
 
-    public String getUuidUser() {
-        return uuidUser;
+    public String getIdUser() {
+        return idUser;
     }
 
-    public void setUuidUser(String uuidUser) {
-        this.uuidUser = uuidUser;
+    public void setIdUser(String idUser) {
+        this.idUser = idUser;
     }
 
     public String getNis() {

@@ -31,7 +31,7 @@ public class GuruRestController {
 
         if(!nig.substring(0,1).equals("G") ||
                 !nig.substring(1,9).equals(tanggal)||
-                !nig.substring(14).equals(guru.getUuidUser())) {
+                !nig.substring(14).equals(guru.getIdUser())) {
             return false;
         }
         else return true;

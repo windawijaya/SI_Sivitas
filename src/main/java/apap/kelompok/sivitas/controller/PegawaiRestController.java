@@ -14,7 +14,6 @@ import javax.validation.Valid;
 import java.sql.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -33,7 +32,7 @@ public class PegawaiRestController {
 
         if(!nip.substring(0,1).equals("P") ||
                 !nip.substring(1,9).equals(tanggal)||
-                !nip.substring(14).equals(pegawai.getUuidUser())) {
+                !nip.substring(14).equals(pegawai.getIdUser())) {
             return false;
         }
         else return true;
