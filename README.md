@@ -21,8 +21,8 @@ API List:
 
 Mengembalikan daftar semua pegawai
 
-**URL** : [`http://sivitas.herokuapp.com/api/pegawai`]
-(http://sivitas.herokuapp.com/api/pegawai)
+**URL** : [`http://sivitas.herokuapp.com/api/employees`]
+(http://sivitas.herokuapp.com/api/employees)
 
 **Method** : `GET`
 
@@ -59,8 +59,8 @@ Mengembalikan daftar semua pegawai
 
 Mengembalikan info seorang pegawai
 
-**URL** : [`http://sivitas.herokuapp.com/api/pegawai/{uuid}`]
-(http://sivitas.herokuapp.com/api/pegawai/e9e68e1279d74277b7a0e1bf04b14ec4)
+**URL** : [`http://sivitas.herokuapp.com/api/employees/{uuid}`]
+(http://sivitas.herokuapp.com/api/employees/e9e68e1279d74277b7a0e1bf04b14ec4)
 
 **Method** : `GET`
 
@@ -86,7 +86,7 @@ Mengembalikan info seorang pegawai
 
 Menambahkan pegawai ke Sivitas
 
-**URL** : `http://sivitas.herokuapp.com/api/pegawai`
+**URL** : `http://sivitas.herokuapp.com/api/employees`
 
 **Method** : `POST`
 
@@ -131,7 +131,7 @@ Menambahkan pegawai ke Sivitas
     "status": 400,
     "error": "Bad Request",
     "message": "NIP in request body is invalid",
-    "path": "/api/pegawai"
+    "path": "/api/employees"
 }
 ```
 
@@ -139,7 +139,7 @@ Menambahkan pegawai ke Sivitas
 
 Mengubah data pegawai.
 
-**URL** : `http://sivitas.herokuapp.com/api/pegawai/e9e68e1279d74277b7a0e1bf04b14ec4`
+**URL** : `http://sivitas.herokuapp.com/api/employees/e9e68e1279d74277b7a0e1bf04b14ec4`
 
 **Method** : `POST`
 
@@ -184,7 +184,7 @@ Mengubah data pegawai.
     "status": 400,
     "error": "Bad Request",
     "message": "NIP in request body is invalid",
-    "path": "/api/pegawai/e9e68e1279d74277b7a0e1bf04b14ec4"
+    "path": "/api/employees/e9e68e1279d74277b7a0e1bf04b14ec4"
 }
 ```
 
@@ -192,8 +192,8 @@ Mengubah data pegawai.
 
 Mengembalikan daftar semua siswa
 
-**URL** : [`http://sivitas.herokuapp.com/api/siswa`]
-(http://sivitas.herokuapp.com/api/siswa)
+**URL** : [`http://sivitas.herokuapp.com/api/students`]
+(http://sivitas.herokuapp.com/api/students)
 
 **Method** : `GET`
 
@@ -230,8 +230,8 @@ Mengembalikan daftar semua siswa
 
 Mengembalikan info seorang siswa
 
-**URL** : [`http://sivitas.herokuapp.com/api/siswa/{uuid}`]
-(http://sivitas.herokuapp.com/api/siswa/9343bd87247a41b892d8ea49fd3eb03f)
+**URL** : [`http://sivitas.herokuapp.com/api/students/{uuid}`]
+(http://sivitas.herokuapp.com/api/students/9343bd87247a41b892d8ea49fd3eb03f)
 
 **Method** : `GET`
 
@@ -257,7 +257,7 @@ Mengembalikan info seorang siswa
 
 Menambahkan siswa ke Sivitas
 
-**URL** : `http://sivitas.herokuapp.com/api/siswa`
+**URL** : `http://sivitas.herokuapp.com/api/students`
 
 **Method** : `POST`
 
@@ -302,7 +302,7 @@ Menambahkan siswa ke Sivitas
     "status": 400,
     "error": "Bad Request",
     "message": "NIS in request body is invalid",
-    "path": "/api/siswa"
+    "path": "/api/students"
 }
 ```
 
@@ -310,7 +310,7 @@ Menambahkan siswa ke Sivitas
 
 Mengubah data siswa.
 
-**URL** : `http://sivitas.herokuapp.com/api/siswa/e9e68e1279d74277b7a0e1bf04b14ec4`
+**URL** : `http://sivitas.herokuapp.com/api/students/e9e68e1279d74277b7a0e1bf04b14ec4`
 
 **Method** : `POST`
 
@@ -355,7 +355,7 @@ Mengubah data siswa.
     "status": 400,
     "error": "Bad Request",
     "message": "NIS in request body is invalid",
-    "path": "/api/siswa/9343bd87247a41b892d8ea49fd3eb03f"
+    "path": "/api/students/9343bd87247a41b892d8ea49fd3eb03f"
 }
 ```
 
@@ -363,8 +363,8 @@ Mengubah data siswa.
 
 Mengembalikan daftar semua guru
 
-**URL** : [`http://sivitas.herokuapp.com/api/guru`]
-(http://sivitas.herokuapp.com/api/guru)
+**URL** : [`http://sivitas.herokuapp.com/api/teachers`]
+(http://sivitas.herokuapp.com/api/teachers)
 
 **Method** : `GET`
 
@@ -401,8 +401,8 @@ Mengembalikan daftar semua guru
 
 Mengembalikan info seorang guru
 
-**URL** : [`http://sivitas.herokuapp.com/api/guru/{uuid}`]
-(http://sivitas.herokuapp.com/api/guru/4b9d357ef11548c698feacaa43a0da2c)
+**URL** : [`http://sivitas.herokuapp.com/api/teachers/{uuid}`]
+(http://sivitas.herokuapp.com/api/teachers/4b9d357ef11548c698feacaa43a0da2c)
 
 **Method** : `GET`
 
@@ -428,7 +428,7 @@ Mengembalikan info seorang guru
 
 Menambahkan guru ke Sivitas
 
-**URL** : `http://sivitas.herokuapp.com/api/guru`
+**URL** : `http://sivitas.herokuapp.com/api/teachers`
 
 **Method** : `POST`
 
@@ -473,7 +473,7 @@ Menambahkan guru ke Sivitas
     "status": 400,
     "error": "Bad Request",
     "message": "NIG in request body is invalid",
-    "path": "/api/guru"
+    "path": "/api/teachers"
 }
 ```
 
@@ -481,7 +481,7 @@ Menambahkan guru ke Sivitas
 
 Mengubah data guru.
 
-**URL** : `sivitas.herokuapp.com/api/guru/4b9d357ef11548c698feacaa43a0da2c`
+**URL** : `sivitas.herokuapp.com/api/teachers/4b9d357ef11548c698feacaa43a0da2c`
 
 **Method** : `POST`
 
@@ -526,6 +526,6 @@ Mengubah data guru.
     "status": 400,
     "error": "Bad Request",
     "message": "NIG in request body is invalid",
-    "path": "/api/guru/4b9d357ef11548c698feacaa43a0da2c"
+    "path": "/api/teachers/4b9d357ef11548c698feacaa43a0da2c"
 }
 ```
