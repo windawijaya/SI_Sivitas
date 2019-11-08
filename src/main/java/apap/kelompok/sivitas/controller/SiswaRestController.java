@@ -32,7 +32,7 @@ public class SiswaRestController {
 
         if(!nis.substring(0,1).equals("S") ||
                 !nis.substring(1,9).equals(tanggal)||
-                !nis.substring(14).equals(siswa.getUuidUser())) {
+                !nis.substring(14).equals(siswa.getIdUser())) {
             return false;
         }
         else return true;
