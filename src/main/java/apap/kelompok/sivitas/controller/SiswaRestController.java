@@ -18,7 +18,7 @@ import java.util.NoSuchElementException;
 
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/students")
 public class SiswaRestController {
     @Autowired
     private SiswaRestService siswaRestService;
@@ -38,9 +38,9 @@ public class SiswaRestController {
         else return true;
     }
 
-    @PostMapping(value= "/siswa")
+    @PostMapping(value= "")
     private BaseResponse<SiswaModel> addSiswa(@Valid @RequestBody SiswaModel siswa, BindingResult bindingResult){
-        BaseResponse<SiswaModel> response = new BaseResponse<SiswaModel>();
+        BaseResponse<SiswaModel> response = new BaseResponse<>();
 
         if(bindingResult.hasFieldErrors()) {
             throw new ResponseStatusException(
@@ -62,9 +62,9 @@ public class SiswaRestController {
         return response;
     }
 
-    @GetMapping(value = "/siswa/{uuid_user}")
+    @GetMapping(value = "/{uuid_user}")
     private BaseResponse<SiswaModel> getSiswa(@PathVariable("uuid_user") String uuid){
-        BaseResponse<SiswaModel> response = new BaseResponse<SiswaModel>();
+        BaseResponse<SiswaModel> response = new BaseResponse<>();
 
         try{
             response.setStatus(200);
@@ -80,9 +80,9 @@ public class SiswaRestController {
         }
     }
 
-    @GetMapping(value = "/siswa")
+    @GetMapping(value = "")
     private BaseResponse<List<SiswaModel>> getAllSiswa(){
-        BaseResponse<List<SiswaModel>> response = new BaseResponse<List<SiswaModel>>();
+        BaseResponse<List<SiswaModel>> response = new BaseResponse<>();
         response.setStatus(200);
         response.setMessage("success");
         response.setResult(siswaRestService.getAllSiswa());
@@ -90,12 +90,12 @@ public class SiswaRestController {
         return response;
     }
 
-    @PutMapping(value = "/siswa/{uuid_user}")
+    @PutMapping(value = "/{uuid_user}")
     private BaseResponse<SiswaModel>  updateSiswa(
             @PathVariable (value="uuid_user") String uuid,
             @RequestBody SiswaModel siswa
     ){
-        BaseResponse<SiswaModel> response = new BaseResponse<SiswaModel>();
+        BaseResponse<SiswaModel> response = new BaseResponse<>();
         try {
             if(isNISMatchData(siswa)) {
                 siswaRestService.changeSiswa(uuid, siswa);

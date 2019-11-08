@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/employees")
 public class PegawaiRestController {
     @Autowired
     private PegawaiRestService pegawaiRestService;
@@ -39,9 +39,9 @@ public class PegawaiRestController {
         else return true;
     }
 
-    @PostMapping(value= "/pegawai")
+    @PostMapping(value= "")
     private BaseResponse<PegawaiModel> addPegawai(@Valid @RequestBody PegawaiModel pegawai, BindingResult bindingResult){
-        BaseResponse<PegawaiModel> response = new BaseResponse<PegawaiModel>();
+        BaseResponse<PegawaiModel> response = new BaseResponse<>();
 
         if(bindingResult.hasFieldErrors()) {
             throw new ResponseStatusException(
@@ -63,9 +63,9 @@ public class PegawaiRestController {
         return response;
     }
 
-    @GetMapping(value = "/pegawai/{uuid_user}")
+    @GetMapping(value = "/{uuid_user}")
     private BaseResponse<PegawaiModel> getPegawai(@PathVariable("uuid_user") String uuid){
-        BaseResponse<PegawaiModel> response = new BaseResponse<PegawaiModel>();
+        BaseResponse<PegawaiModel> response = new BaseResponse<>();
 
         try{
             response.setStatus(200);
@@ -81,9 +81,9 @@ public class PegawaiRestController {
         }
     }
 
-    @GetMapping(value = "/pegawai")
+    @GetMapping(value = "")
     private BaseResponse<List<PegawaiModel>> getAllPegawai(){
-        BaseResponse<List<PegawaiModel>> response = new BaseResponse<List<PegawaiModel>>();
+        BaseResponse<List<PegawaiModel>> response = new BaseResponse<>();
         response.setStatus(200);
         response.setMessage("success");
         response.setResult(pegawaiRestService.getAllPegawai());
@@ -91,12 +91,12 @@ public class PegawaiRestController {
         return response;
     }
 
-    @PutMapping(value = "/pegawai/{uuid_user}")
+    @PutMapping(value = "/{uuid_user}")
     private BaseResponse<PegawaiModel>  updatePegawai(
             @PathVariable (value="uuid_user") String uuid,
             @RequestBody PegawaiModel pegawai
     ){
-        BaseResponse<PegawaiModel> response = new BaseResponse<PegawaiModel>();
+        BaseResponse<PegawaiModel> response = new BaseResponse<>();
         try {
             if(isNIPMatchData(pegawai)) {
                 pegawaiRestService.changePegawai(uuid, pegawai);
