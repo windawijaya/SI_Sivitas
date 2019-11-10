@@ -34,7 +34,7 @@ Mengembalikan daftar semua pegawai
     "message": "success",
     "result": [
         {
-            "uuidUser": "e9e68e1279d74277b7a0e1bf04b14ec4",
+            "idUser": "e9e68e1279d74277b7a0e1bf04b14ec4",
             "nip": "P13121960SE012e9e68e1279d74277b7a0e1bf04b14ec4",
             "nama": "Nabila Keisha Z",
             "tempatLahir": "Bogor",
@@ -43,7 +43,7 @@ Mengembalikan daftar semua pegawai
             "telepon": "08112327590"
         },
         {
-            "uuidUser": "53338ba8258241989aaec882270795c6",
+            "idUser": "53338ba8258241989aaec882270795c6",
             "nip": "P06061982PL90253338ba8258241989aaec882270795c6",
             "nama": "Dinda Pramata",
             "tempatLahir": "Jakarta",
@@ -71,7 +71,7 @@ Mengembalikan info seorang pegawai
     "status": 200,
     "message": "success",
     "result": {
-        "uuidUser": "e9e68e1279d74277b7a0e1bf04b14ec4",
+        "idUser": "e9e68e1279d74277b7a0e1bf04b14ec4",
         "nip": "P13121960SE012e9e68e1279d74277b7a0e1bf04b14ec4",
         "nama": "Nabila Keisha Z",
         "tempatLahir": "Bogor",
@@ -95,7 +95,7 @@ Menambahkan pegawai ke Sivitas
 **Body Param** :
 ```json
 {
-	"uuidUser": "53338ba8258241989aaec882270795c6",
+	"idUser": "53338ba8258241989aaec882270795c6",
 	"nip": "P06061982PL90253338ba8258241989aaec882270795c6",
 	"nama": "Dinda Pramata",
 	"tempatLahir": "Jakarta",
@@ -112,7 +112,7 @@ Menambahkan pegawai ke Sivitas
     "status": 200,
     "message": "success",
     "result": {
-        "uuidUser": "53338ba8258241989aaec882270795c6",
+        "idUser": "53338ba8258241989aaec882270795c6",
         "nip": "P06061982PL90253338ba8258241989aaec882270795c6",
         "nama": "Dinda Pramata",
         "tempatLahir": "Jakarta",
@@ -141,14 +141,14 @@ Mengubah data pegawai.
 
 **URL** : `http://sivitas.herokuapp.com/api/employees/e9e68e1279d74277b7a0e1bf04b14ec4`
 
-**Method** : `POST`
+**Method** : `PUT`
 
 **Header**: `Content-Type: application/json`
 
 **Body Param** :
 ```json
 {
-	"uuidUser": "e9e68e1279d74277b7a0e1bf04b14ec4",
+	"idUser": "e9e68e1279d74277b7a0e1bf04b14ec4",
 	"nip": "P13121960SE012e9e68e1279d74277b7a0e1bf04b14ec4",
 	"nama": "Nabila Keisha Z",
 	"tempatLahir": "Bogor",
@@ -165,7 +165,7 @@ Mengubah data pegawai.
     "status": 200,
     "message": "success",
     "result": {
-        "uuidUser": "e9e68e1279d74277b7a0e1bf04b14ec4",
+        "idUser": "e9e68e1279d74277b7a0e1bf04b14ec4",
         "nip": "P13121960SE012e9e68e1279d74277b7a0e1bf04b14ec4",
         "nama": "Nabila Keisha Z",
         "tempatLahir": "Bogor",
@@ -205,7 +205,7 @@ Mengembalikan daftar semua siswa
     "message": "success",
     "result": [
         {
-            "uuidUser": "21c19e51e38f47b9930f9c6a3cee2a30",
+            "idUser": "21c19e51e38f47b9930f9c6a3cee2a30",
             "nis": "S07042001AB12321c19e51e38f47b9930f9c6a3cee2a30",
             "nama": "Ratu Mustika",
             "tempatLahir": "Bandung",
@@ -214,7 +214,7 @@ Mengembalikan daftar semua siswa
             "telepon": "08526229304"
         },
         {
-            "uuidUser": "9343bd87247a41b892d8ea49fd3eb03f",
+            "idUser": "9343bd87247a41b892d8ea49fd3eb03f",
             "nis": "S12102001RE0019343bd87247a41b892d8ea49fd3eb03f",
             "nama": "Insani Lenny",
             "tempatLahir": "Surabaya",
@@ -242,7 +242,7 @@ Mengembalikan info seorang siswa
     "status": 200,
     "message": "success",
     "result": {
-        "uuidUser": "9343bd87247a41b892d8ea49fd3eb03f",
+        "idUser": "9343bd87247a41b892d8ea49fd3eb03f",
         "nis": "S12102001RE0019343bd87247a41b892d8ea49fd3eb03f",
         "nama": "Insani Lenny",
         "tempatLahir": "Surabaya",
@@ -266,7 +266,7 @@ Menambahkan siswa ke Sivitas
 **Body Param** :
 ```json
 {
-	"uuidUser": "21c19e51e38f47b9930f9c6a3cee2a30",
+	"idUser": "21c19e51e38f47b9930f9c6a3cee2a30",
 	"nis": "S07042001AB12321c19e51e38f47b9930f9c6a3cee2a30",
 	"nama": "Ratu Mustika",
 	"tempatLahir": "Bandung",
@@ -283,7 +283,7 @@ Menambahkan siswa ke Sivitas
     "status": 200,
     "message": "success",
     "result": {
-        "uuidUser": "21c19e51e38f47b9930f9c6a3cee2a30",
+        "idUser": "21c19e51e38f47b9930f9c6a3cee2a30",
         "nis": "S07042001AB12321c19e51e38f47b9930f9c6a3cee2a30",
         "nama": "Ratu Mustika",
         "tempatLahir": "Bandung",
@@ -312,14 +312,14 @@ Mengubah data siswa.
 
 **URL** : `http://sivitas.herokuapp.com/api/students/e9e68e1279d74277b7a0e1bf04b14ec4`
 
-**Method** : `POST`
+**Method** : `PUT`
 
 **Header**: `Content-Type: application/json`
 
 **Body Param** :
 ```json
 {
-	"uuidUser": "9343bd87247a41b892d8ea49fd3eb03f",
+	"idUser": "9343bd87247a41b892d8ea49fd3eb03f",
 	"nis": "S12102001RE0019343bd87247a41b892d8ea49fd3eb03f",
 	"nama": "Insani Hani",
 	"tempatLahir": "Surabaya",
@@ -336,7 +336,7 @@ Mengubah data siswa.
     "status": 200,
     "message": "success",
     "result": {
-        "uuidUser": "9343bd87247a41b892d8ea49fd3eb03f",
+        "idUser": "9343bd87247a41b892d8ea49fd3eb03f",
         "nis": "S12102001RE0019343bd87247a41b892d8ea49fd3eb03f",
         "nama": "Insani Hani",
         "tempatLahir": "Surabaya",
@@ -376,7 +376,7 @@ Mengembalikan daftar semua guru
     "message": "success",
     "result": [
         {
-            "uuidUser": "4b9d357ef11548c698feacaa43a0da2c",
+            "idUser": "4b9d357ef11548c698feacaa43a0da2c",
             "nig": "G07021980SE0124b9d357ef11548c698feacaa43a0da2c",
             "nama": "Fitri Sara",
             "tempatLahir": "Bogor",
@@ -385,7 +385,7 @@ Mengembalikan daftar semua guru
             "telepon": "08112327590"
         },
         {
-            "uuidUser": "cb17f1418aa14d42b042236bd92429a7",
+            "idUser": "cb17f1418aa14d42b042236bd92429a7",
             "nig": "G25081988UI765cb17f1418aa14d42b042236bd92429a7",
             "nama": "Handoko Theodorus",
             "tempatLahir": "Jakarta",
@@ -413,7 +413,7 @@ Mengembalikan info seorang guru
     "status": 200,
     "message": "success",
     "result": {
-        "uuidUser": "4b9d357ef11548c698feacaa43a0da2c",
+        "idUser": "4b9d357ef11548c698feacaa43a0da2c",
         "nig": "G07021980SE0124b9d357ef11548c698feacaa43a0da2c",
         "nama": "Fitri Sara",
         "tempatLahir": "Bogor",
@@ -437,7 +437,7 @@ Menambahkan guru ke Sivitas
 **Body Param** :
 ```json
 {
-	"uuidUser": "cb17f1418aa14d42b042236bd92429a7",
+	"idUser": "cb17f1418aa14d42b042236bd92429a7",
 	"nig": "G25081988UI765cb17f1418aa14d42b042236bd92429a7",
 	"nama": "Handoko Theodorus",
 	"tempatLahir": "Jakarta",
@@ -454,7 +454,7 @@ Menambahkan guru ke Sivitas
     "status": 200,
     "message": "success",
     "result": {
-        "uuidUser": "cb17f1418aa14d42b042236bd92429a7",
+        "idUser": "cb17f1418aa14d42b042236bd92429a7",
         "nig": "G25081988UI765cb17f1418aa14d42b042236bd92429a7",
         "nama": "Handoko Theodorus",
         "tempatLahir": "Jakarta",
@@ -483,14 +483,14 @@ Mengubah data guru.
 
 **URL** : `sivitas.herokuapp.com/api/teachers/4b9d357ef11548c698feacaa43a0da2c`
 
-**Method** : `POST`
+**Method** : `PUT`
 
 **Header**: `Content-Type: application/json`
 
 **Body Param** :
 ```json
 {
-	"uuidUser": "4b9d357ef11548c698feacaa43a0da2c",
+	"idUser": "4b9d357ef11548c698feacaa43a0da2c",
 	"nig": "G07021980SE0124b9d357ef11548c698feacaa43a0da2c",
 	"nama": "Fitri Sara",
 	"tempatLahir": "Bogor",
@@ -507,7 +507,7 @@ Mengubah data guru.
     "status": 200,
     "message": "success",
     "result": {
-        "uuidUser": "4b9d357ef11548c698feacaa43a0da2c",
+        "idUser": "4b9d357ef11548c698feacaa43a0da2c",
         "nig": "G07021980SE0124b9d357ef11548c698feacaa43a0da2c",
         "nama": "Fitri Sara",
         "tempatLahir": "Bogor",
